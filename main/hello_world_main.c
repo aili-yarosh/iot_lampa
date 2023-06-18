@@ -11,12 +11,18 @@
 #include "freertos/task.h"
 #include "esp_system.h"
 #include "esp_spi_flash.h"
+#include "driver/gpio.h"
 
 
 void app_main()
 {
 
-    
+    gpio_config_t lapka_1;
+    lapka_1.pin_bit_mask = 0b100;
+    lapka_1.mode = GPIO_MODE_OUTPUT;
+    gpio_config(&lapka_1);
+
+    gpio_set_level (2,1);
 
     // printf("Hello world!\n");
 
